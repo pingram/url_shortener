@@ -52,6 +52,7 @@ class ShortenedUrl < ActiveRecord::Base
     :presence => true
   validates :long_url,
     :presence => true
+  validates :long_url, :length => { maximum: 1024 }
 
   def self.random_code
     new_short_url = nil
